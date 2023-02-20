@@ -7,4 +7,6 @@ see the git history of this branch for step-by-step instructions
 
 
 ## Current Step
-One shift register, 4 rows & 4 columns of the display wired up
+One shift register, 4 rows & 4 columns of the display wired up.
+Quickly alternating pattern that cannot be drawn in just one `shiftOut`.
+Use a potentiometer to vary the 'refresh rate'.

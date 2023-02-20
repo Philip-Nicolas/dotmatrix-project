@@ -9,9 +9,10 @@ int dt = 1;
 
 byte data = B10010110; //example image
 
-void serialWrite(byte data) {
+void serialWrite2(byte data1, byte data2) {
   digitalWrite(latchPin, LOW);
-  shiftOut(dataPin, clockPin, LSBFIRST, data);
+  shiftOut(dataPin, clockPin, LSBFIRST, data1);
+  shiftOut(dataPin, clockPin, LSBFIRST, data2);
   digitalWrite(latchPin, HIGH);
 }
 
@@ -26,8 +27,8 @@ void setup() {
 void loop() {
   dt = map(max(analogRead(potPin), min_pot_reading), min_pot_reading, 1023, 0, 200);
   
-  serialWrite(data);
+  serialWrite2(data, data ^ B11111111);
   delay(dt);
-  serialWrite(data ^ B11111111);
+  serialWrite2(data ^ B11111111, data);
   delay(dt);
 }

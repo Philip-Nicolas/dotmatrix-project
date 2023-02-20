@@ -1,14 +1,18 @@
-#include "images.h"
+#include "images.hpp"
+#include "animation.hpp"
 
 const int dataPin = 4;
 const int clockPin = 2;
 const int latchPin = 3;
 
 const int potPin = A0;
+const int min_pot_reading = 128;
 
-int min_pot_reading = 128;
+// animation constants. see images.hpp for animation.
 
-byte data = B10010110; //example image
+const int fps = 12;
+const int duration = frames * 1000 / fps; // animation duration in ms
+int frame = 0; // index of frame to be currently drawn
 
 void serialWrite2(byte data1, byte data2) {
   digitalWrite(latchPin, LOW);
@@ -33,5 +37,6 @@ void setup() {
 }
 
 void loop() {
-  scanImage(gojuryu);
+  frame = (millis() % duration) * frames / duration;
+  scanImage(animation[frame]);
 }

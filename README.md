@@ -23,3 +23,7 @@ Code binary logic to change images to bits to `shiftOut`.
 
 ## Step 5
 Add animation whose frames are updated separately from display.
+
+## Step 6
+Use a timed interrupt to draw scan lines so that other code can run concurrently,
+without worrying about messing up the image.

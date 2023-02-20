@@ -13,6 +13,10 @@ One shift register, 4 rows & 4 columns of the display wired up.
 Quickly alternating pattern that cannot be drawn in just one `shiftOut`.
 Use a potentiometer to vary the 'refresh rate'.
 
-## Current Step
+## Step 3
 Both shift registers wired up, along with entire dot matrix display.
 Pattern extended to whole display.
+
+## Current Step
+Add images to draw on the display.
+Code binary logic to change images to bits to `shiftOut`.
